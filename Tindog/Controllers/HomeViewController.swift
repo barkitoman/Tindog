@@ -35,6 +35,13 @@ class HomeViewController: UIViewController {
         //print("Drag \(gesture.translation(in: view))")
         let cardPoint = gesture.translation(in: view)
         self.cardView.center = CGPoint(x: self.view.bounds.width/2 + cardPoint.x, y: self.view.bounds.height/2 + cardPoint.y)
+        
+        let xFromCenter = self.view.bounds.width / 2 - self.cardView.center.x
+        var rotate = CGAffineTransform(rotationAngle: xFromCenter/300)
+        let scale = min(100/abs(xFromCenter), 1)
+        var finalTransform = rotate.scaledBy(x: scale, y: scale)
+        self.cardView.transform = finalTransform
+        
         if gesture.state == .ended {
             print(self.cardView.center.x)
             if  self.cardView.center.x < (self.view.bounds.width/2 - 100){
@@ -43,7 +50,12 @@ class HomeViewController: UIViewController {
             if  self.cardView.center.x > (self.view.bounds.width/2 + 100){
                 print("like")
             }
+            rotate = CGAffineTransform(rotationAngle: 0)
+            finalTransform = rotate.scaledBy(x: 1, y: 1)
+            self.cardView.transform = finalTransform
             self.cardView.center = CGPoint(x: self.HomeWrapper.bounds.width/2, y: self.HomeWrapper.bounds.height/2 - 50)
+            
+            
         }
     }
 
