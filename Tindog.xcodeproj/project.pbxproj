@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		67982CEF204EE6A800FFA635 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67982CEE204EE6A800FFA635 /* AppDelegate.swift */; };
+		67982CF1204EE6A800FFA635 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67982CF0204EE6A800FFA635 /* ViewController.swift */; };
+		67982CF4204EE6A800FFA635 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67982CF2204EE6A800FFA635 /* Main.storyboard */; };
+		67982CF6204EE6A800FFA635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67982CF5204EE6A800FFA635 /* Assets.xcassets */; };
+		67982CF9204EE6A800FFA635 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67982CF7204EE6A800FFA635 /* LaunchScreen.storyboard */; };
+		67982D04204EE6A800FFA635 /* TindogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67982D03204EE6A800FFA635 /* TindogTests.swift */; };
+		67982D0F204EE6A800FFA635 /* TindogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67982D0E204EE6A800FFA635 /* TindogUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		67982D00204EE6A800FFA635 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67982CE3204EE6A800FFA635 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67982CEA204EE6A800FFA635;
+			remoteInfo = Tindog;
+		};
+		67982D0B204EE6A800FFA635 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67982CE3204EE6A800FFA635 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67982CEA204EE6A800FFA635;
+			remoteInfo = Tindog;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		67982CEB204EE6A800FFA635 /* Tindog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tindog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		67982CEE204EE6A800FFA635 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		67982CF0204EE6A800FFA635 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		67982CF3204EE6A800FFA635 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		67982CF5204EE6A800FFA635 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		67982CF8204EE6A800FFA635 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		67982CFA204EE6A800FFA635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67982CFF204EE6A800FFA635 /* TindogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TindogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		67982D03204EE6A800FFA635 /* TindogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TindogTests.swift; sourceTree = "<group>"; };
+		67982D05204EE6A800FFA635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67982D0A204EE6A800FFA635 /* TindogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TindogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		67982D0E204EE6A800FFA635 /* TindogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TindogUITests.swift; sourceTree = "<group>"; };
+		67982D10204EE6A800FFA635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		67982CE8204EE6A800FFA635 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67982CFC204EE6A800FFA635 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67982D07204EE6A800FFA635 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		67982CE2204EE6A800FFA635 = {
+			isa = PBXGroup;
+			children = (
+				67982CED204EE6A800FFA635 /* Tindog */,
+				67982D02204EE6A800FFA635 /* TindogTests */,
+				67982D0D204EE6A800FFA635 /* TindogUITests */,
+				67982CEC204EE6A800FFA635 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		67982CEC204EE6A800FFA635 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				67982CEB204EE6A800FFA635 /* Tindog.app */,
+				67982CFF204EE6A800FFA635 /* TindogTests.xctest */,
+				67982D0A204EE6A800FFA635 /* TindogUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		67982CED204EE6A800FFA635 /* Tindog */ = {
+			isa = PBXGroup;
+			children = (
+				67982CEE204EE6A800FFA635 /* AppDelegate.swift */,
+				67982CF0204EE6A800FFA635 /* ViewController.swift */,
+				67982CF2204EE6A800FFA635 /* Main.storyboard */,
+				67982CF5204EE6A800FFA635 /* Assets.xcassets */,
+				67982CF7204EE6A800FFA635 /* LaunchScreen.storyboard */,
+				67982CFA204EE6A800FFA635 /* Info.plist */,
+			);
+			path = Tindog;
+			sourceTree = "<group>";
+		};
+		67982D02204EE6A800FFA635 /* TindogTests */ = {
+			isa = PBXGroup;
+			children = (
+				67982D03204EE6A800FFA635 /* TindogTests.swift */,
+				67982D05204EE6A800FFA635 /* Info.plist */,
+			);
+			path = TindogTests;
+			sourceTree = "<group>";
+		};
+		67982D0D204EE6A800FFA635 /* TindogUITests */ = {
+			isa = PBXGroup;
+			children = (
+				67982D0E204EE6A800FFA635 /* TindogUITests.swift */,
+				67982D10204EE6A800FFA635 /* Info.plist */,
+			);
+			path = TindogUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		67982CEA204EE6A800FFA635 /* Tindog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67982D13204EE6A800FFA635 /* Build configuration list for PBXNativeTarget "Tindog" */;
+			buildPhases = (
+				67982CE7204EE6A800FFA635 /* Sources */,
+				67982CE8204EE6A800FFA635 /* Frameworks */,
+				67982CE9204EE6A800FFA635 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tindog;
+			productName = Tindog;
+			productReference = 67982CEB204EE6A800FFA635 /* Tindog.app */;
+			productType = "com.apple.product-type.application";
+		};
+		67982CFE204EE6A800FFA635 /* TindogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67982D16204EE6A800FFA635 /* Build configuration list for PBXNativeTarget "TindogTests" */;
+			buildPhases = (
+				67982CFB204EE6A800FFA635 /* Sources */,
+				67982CFC204EE6A800FFA635 /* Frameworks */,
+				67982CFD204EE6A800FFA635 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67982D01204EE6A800FFA635 /* PBXTargetDependency */,
+			);
+			name = TindogTests;
+			productName = TindogTests;
+			productReference = 67982CFF204EE6A800FFA635 /* TindogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		67982D09204EE6A800FFA635 /* TindogUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67982D19204EE6A800FFA635 /* Build configuration list for PBXNativeTarget "TindogUITests" */;
+			buildPhases = (
+				67982D06204EE6A800FFA635 /* Sources */,
+				67982D07204EE6A800FFA635 /* Frameworks */,
+				67982D08204EE6A800FFA635 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67982D0C204EE6A800FFA635 /* PBXTargetDependency */,
+			);
+			name = TindogUITests;
+			productName = TindogUITests;
+			productReference = 67982D0A204EE6A800FFA635 /* TindogUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		67982CE3204EE6A800FFA635 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = Doyle;
+				TargetAttributes = {
+					67982CEA204EE6A800FFA635 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					67982CFE204EE6A800FFA635 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 67982CEA204EE6A800FFA635;
+					};
+					67982D09204EE6A800FFA635 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 67982CEA204EE6A800FFA635;
+					};
+				};
+			};
+			buildConfigurationList = 67982CE6204EE6A800FFA635 /* Build configuration list for PBXProject "Tindog" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 67982CE2204EE6A800FFA635;
+			productRefGroup = 67982CEC204EE6A800FFA635 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				67982CEA204EE6A800FFA635 /* Tindog */,
+				67982CFE204EE6A800FFA635 /* TindogTests */,
+				67982D09204EE6A800FFA635 /* TindogUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		67982CE9204EE6A800FFA635 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67982CF9204EE6A800FFA635 /* LaunchScreen.storyboard in Resources */,
+				67982CF6204EE6A800FFA635 /* Assets.xcassets in Resources */,
+				67982CF4204EE6A800FFA635 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67982CFD204EE6A800FFA635 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67982D08204EE6A800FFA635 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		67982CE7204EE6A800FFA635 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67982CF1204EE6A800FFA635 /* ViewController.swift in Sources */,
+				67982CEF204EE6A800FFA635 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67982CFB204EE6A800FFA635 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67982D04204EE6A800FFA635 /* TindogTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67982D06204EE6A800FFA635 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67982D0F204EE6A800FFA635 /* TindogUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		67982D01204EE6A800FFA635 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67982CEA204EE6A800FFA635 /* Tindog */;
+			targetProxy = 67982D00204EE6A800FFA635 /* PBXContainerItemProxy */;
+		};
+		67982D0C204EE6A800FFA635 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67982CEA204EE6A800FFA635 /* Tindog */;
+			targetProxy = 67982D0B204EE6A800FFA635 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		67982CF2204EE6A800FFA635 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67982CF3204EE6A800FFA635 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		67982CF7204EE6A800FFA635 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67982CF8204EE6A800FFA635 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		67982D11204EE6A800FFA635 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		67982D12204EE6A800FFA635 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		67982D14204EE6A800FFA635 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Tindog/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = development.Tindog.Tindog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		67982D15204EE6A800FFA635 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Tindog/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = development.Tindog.Tindog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		67982D17204EE6A800FFA635 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TindogTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = development.Tindog.TindogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tindog.app/Tindog";
+			};
+			name = Debug;
+		};
+		67982D18204EE6A800FFA635 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TindogTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = development.Tindog.TindogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tindog.app/Tindog";
+			};
+			name = Release;
+		};
+		67982D1A204EE6A800FFA635 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TindogUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = development.Tindog.TindogUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Tindog;
+			};
+			name = Debug;
+		};
+		67982D1B204EE6A800FFA635 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TindogUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = development.Tindog.TindogUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Tindog;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		67982CE6204EE6A800FFA635 /* Build configuration list for PBXProject "Tindog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67982D11204EE6A800FFA635 /* Debug */,
+				67982D12204EE6A800FFA635 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67982D13204EE6A800FFA635 /* Build configuration list for PBXNativeTarget "Tindog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67982D14204EE6A800FFA635 /* Debug */,
+				67982D15204EE6A800FFA635 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67982D16204EE6A800FFA635 /* Build configuration list for PBXNativeTarget "TindogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67982D17204EE6A800FFA635 /* Debug */,
+				67982D18204EE6A800FFA635 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67982D19204EE6A800FFA635 /* Build configuration list for PBXNativeTarget "TindogUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67982D1A204EE6A800FFA635 /* Debug */,
+				67982D1B204EE6A800FFA635 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 67982CE3204EE6A800FFA635 /* Project object */;
+}
