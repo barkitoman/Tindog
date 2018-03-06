@@ -17,17 +17,39 @@ class NavigationImageView: UIImageView {
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var HomeWrapper: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let titleView = NavigationImageView()
         titleView.image = UIImage(named: "Actions")
         self.navigationItem.titleView = titleView
+        let homeGR = UIPanGestureRecognizer(target: self, action: #selector(cardDragged))
+        self.cardView.addGestureRecognizer(homeGR)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func cardDragged(gesture: UIPanGestureRecognizer){
+        //print("Drag \(gesture.translation(in: view))")
+        let cardPoint = gesture.translation(in: view)
+        self.cardView.center = CGPoint(x: self.view.bounds.width/2 + cardPoint.x, y: self.view.bounds.height/2 + cardPoint.y)
+        if gesture.state == .ended {
+            print(self.cardView.center.x)
+            if  self.cardView.center.x < (self.view.bounds.width/2 - 100){
+                print("dislike")
+            }
+            if  self.cardView.center.x > (self.view.bounds.width/2 + 100){
+                print("like")
+            }
+            self.cardView.center = CGPoint(x: self.HomeWrapper.bounds.width/2, y: self.HomeWrapper.bounds.height/2 - 50)
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
         // Dispose of any resources that can be recreated.
     }
     

@@ -110,6 +110,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="9sV-XN-yAn"/>
+                    <connections>
+                        <outlet property="HomeWrapper" destination="GUr-XC-Fhi" id="PC8-ys-nmQ"/>
+                        <outlet property="cardView" destination="OuQ-u0-ioc" id="vAf-Ia-bef"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
