@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var nopeImage: UIImageView!
     
     let revealingSplashView = RevealingSplashView(iconImage: UIImage(named:"splash_icon")!, iconInitialSize: CGSize(width: 80, height: 80), backgroundColor: UIColor.white)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(revealingSplashView)
@@ -34,7 +35,22 @@ class HomeViewController: UIViewController {
         self.navigationItem.titleView = titleView
         let homeGR = UIPanGestureRecognizer(target: self, action: #selector(cardDragged))
         self.cardView.addGestureRecognizer(homeGR)
+        
+        let leftbtn = UIButton(type: .custom)
+        leftbtn.setImage(UIImage(named: "login"), for: .normal)
+        leftbtn.imageView?.contentMode = .scaleAspectFit
+        leftbtn.addTarget(self, action: #selector(goToLogin(sender:)), for: .touchUpInside)
+        
+        let leftBarButton =  UIBarButtonItem(customView: leftbtn)
+        self.navigationItem.leftBarButtonItem = leftBarButton
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func goToLogin(sender: UIButton){
+        print("push")
+        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController")
+        present(loginViewController, animated: true, completion: nil)
     }
     
     @objc func cardDragged(gesture: UIPanGestureRecognizer){
