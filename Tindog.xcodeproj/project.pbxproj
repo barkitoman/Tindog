@@ -15,6 +15,7 @@
 		67982D0F204EE6A800FFA635 /* TindogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67982D0E204EE6A800FFA635 /* TindogUITests.swift */; };
 		67982D1E204EFC7700FFA635 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67982D1D204EFC7700FFA635 /* HomeViewController.swift */; };
 		67CC84292056CDA400C2C24B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC84282056CDA300C2C24B /* LoginViewController.swift */; };
+		67CC842C2056D3EE00C2C24B /* UIVIewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC842B2056D3EE00C2C24B /* UIVIewExt.swift */; };
 		EB1ACECE86AA1C3BB6AABE11 /* Pods_Tindog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FF46D23A046F0D63DCA40AC /* Pods_Tindog.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		67982D10204EE6A800FFA635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67982D1D204EFC7700FFA635 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		67CC84282056CDA300C2C24B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		67CC842B2056D3EE00C2C24B /* UIVIewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewExt.swift; sourceTree = "<group>"; };
 		6FF46D23A046F0D63DCA40AC /* Pods_Tindog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tindog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A12B6D19801F750213FA6DFA /* Pods-Tindog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tindog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tindog/Pods-Tindog.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +108,7 @@
 		67982CED204EE6A800FFA635 /* Tindog */ = {
 			isa = PBXGroup;
 			children = (
+				67CC842A2056D3C500C2C24B /* Extensions */,
 				67982D1C204EFC4000FFA635 /* Controllers */,
 				67982CEE204EE6A800FFA635 /* AppDelegate.swift */,
 				67982CF2204EE6A800FFA635 /* Main.storyboard */,
@@ -141,6 +144,14 @@
 				67CC84282056CDA300C2C24B /* LoginViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		67CC842A2056D3C500C2C24B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				67CC842B2056D3EE00C2C24B /* UIVIewExt.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		90C9E79FEB2EA0C89C1C51F4 /* Frameworks */ = {
@@ -351,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67CC842C2056D3EE00C2C24B /* UIVIewExt.swift in Sources */,
 				67CC84292056CDA400C2C24B /* LoginViewController.swift in Sources */,
 				67982CEF204EE6A800FFA635 /* AppDelegate.swift in Sources */,
 				67982D1E204EFC7700FFA635 /* HomeViewController.swift in Sources */,
