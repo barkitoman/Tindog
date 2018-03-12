@@ -10,17 +10,26 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.bindKeyboard()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
-        self.view.addGestureRecognizer(tap)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
+//        self.view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
     }
     
-    @objc func handleTap(sender: UITapGestureRecognizer){
-        self.view.endEditing(true)
-    }
+//    @objc func handleTap(sender: UITapGestureRecognizer){
+//        self.view.endEditing(true)
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -29,6 +38,26 @@ class LoginViewController: UIViewController {
     
     @IBAction func actionClose(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func keyboardWillShow(_ notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            scrollView.contentInset.bottom = keyboardSize.height + 90
+        }
+    }
+    
+    @objc func keyboardWillHide(_ notification: NSNotification) {
+        scrollView.contentInset.bottom = 0
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        txtEmail.resignFirstResponder()
+        txtPassword.resignFirstResponder()
+        return true
     }
     
     /*
