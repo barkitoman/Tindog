@@ -8,12 +8,12 @@
 
 import UIKit
 import RevealingSplashView
+import Firebase
 
 class NavigationImageView: UIImageView {
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         return CGSize(width: 76, height: 39)
     }
-    
 }
 
 class HomeViewController: UIViewController {
@@ -22,8 +22,18 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var homeWrapper: UIStackView!
     @IBOutlet weak var likeImage: UIImageView!
     @IBOutlet weak var nopeImage: UIImageView!
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var lbCarName: UILabel!
+    
+    let leftbtn = UIButton(type: .custom)
+    let rightBtn = UIButton(type: .custom)
+    var currentUserProfile: UserModel?
+    var currentMatch: MatchModel?
+    var secondUserUid: String?
     
     let revealingSplashView = RevealingSplashView(iconImage: UIImage(named:"splash_icon")!, iconInitialSize: CGSize(width: 80, height: 80), backgroundColor: UIColor.white)
+    
+    var users = [UserModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,14 +46,66 @@ class HomeViewController: UIViewController {
         let homeGR = UIPanGestureRecognizer(target: self, action: #selector(cardDragged))
         self.cardView.addGestureRecognizer(homeGR)
         
-        let leftbtn = UIButton(type: .custom)
-        leftbtn.setImage(UIImage(named: "login"), for: .normal)
-        leftbtn.imageView?.contentMode = .scaleAspectFit
-        leftbtn.addTarget(self, action: #selector(goToLogin(sender:)), for: .touchUpInside)
-        
+        self.leftbtn.imageView?.contentMode = .scaleAspectFit
         let leftBarButton =  UIBarButtonItem(customView: leftbtn)
         self.navigationItem.leftBarButtonItem = leftBarButton
-        // Do any additional setup after loading the view.
+        
+        self.rightBtn.imageView?.contentMode = .scaleAspectFit
+        self.rightBtn.setImage(UIImage(named: "match_inactive"), for: .normal)
+        let rightBarBtn =  UIBarButtonItem(customView: rightBtn)
+        self.navigationItem.rightBarButtonItem = rightBarBtn
+        
+        
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if let _ = user {
+                print("el usuario inicio correctamente" )
+            }else{
+                print("El usuario hizo logout")
+            }
+            DataBaseService.instance.observerUserProfile { (userDict) in
+                self.currentUserProfile = userDict
+                UpdateDBService.instance.observeMatch { (matchDict) in
+                    print("update Match")
+                    if let match = matchDict {
+                        if let user = self.currentUserProfile{
+                            if user.userIsOnMatch == false {
+                                print("tiene un match")
+                                self.currentMatch = match
+                                self.changeRightBtn(active: true)
+                            }
+                        }
+                    }else{
+                        self.changeRightBtn(active: false)
+                    }
+                }
+            }
+            self.getUsers()
+        }
+        
+        
+    }
+    
+    func changeRightBtn(active: Bool){
+        if active {
+            self.rightBtn.addTarget(self, action: #selector(goToMatch(sender:)), for: .touchUpInside)
+            self.rightBtn.setImage(UIImage(named: "match_active"), for: .normal)
+        }else{
+            self.rightBtn.removeTarget(nil, action: nil, for: .allEvents)
+            self.rightBtn.setImage(UIImage(named: "match_inactive"), for: .normal)
+           
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if Auth.auth().currentUser != nil {
+            self.leftbtn.setImage(UIImage(named: "login_active"), for: .normal)
+            self.leftbtn.removeTarget(nil, action: nil, for: .allEvents)
+            self.leftbtn.addTarget(self, action: #selector(goToProfile(sender:)), for: .touchUpInside)
+        }else{
+            self.leftbtn.setImage(UIImage(named: "login"), for: .normal)
+            self.leftbtn.removeTarget(nil, action: nil, for: .allEvents)
+            self.leftbtn.addTarget(self, action: #selector(goToLogin(sender:)), for: .touchUpInside)
+        }
     }
     
     @objc func goToLogin(sender: UIButton){
@@ -51,6 +113,36 @@ class HomeViewController: UIViewController {
         let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController")
         present(loginViewController, animated: true, completion: nil)
+    }
+    
+    @objc func goToProfile(sender: UIButton){
+        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let profileViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        profileViewController.currentUserProfile = currentUserProfile
+        self.navigationController?.pushViewController(profileViewController, animated: true)
+    }
+    
+    @objc func goToMatch(sender: UIButton){
+        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let matchViewController = storyBoard.instantiateViewController(withIdentifier: "MatchViewController") as! MatchViewController
+        matchViewController.currentUserProfile = self.currentUserProfile
+        matchViewController.currentMatch = self.currentMatch
+        present(matchViewController, animated: true, completion: nil)
+    }
+    
+    func getUsers(){
+        DataBaseService.instance.User_Ref.observeSingleEvent(of: .value) { (snapshot) in
+            let usersSnapshot = snapshot.children.flatMap{UserModel(snapshot: $0 as! DataSnapshot)}
+            for user in usersSnapshot{
+                print("user: \(user.email)")
+                if self.currentUserProfile?.uid != user.uid{
+                    self.users.append(user)
+                }
+            }
+            if self.users.count > 0 {
+                self.updateImage(uid: (self.users.first?.uid)!)
+            }
+        }
     }
     
     @objc func cardDragged(gesture: UIPanGestureRecognizer){
@@ -78,16 +170,37 @@ class HomeViewController: UIViewController {
             }
             if  self.cardView.center.x > (self.view.bounds.width/2 + 100){
                 print("like")
+                //Created Match
+                if let uid2 = self.secondUserUid{
+                    DataBaseService.instance.createFirebaseDBMatch(uid: (self.currentUserProfile?.uid)!, uid2: uid2)
+                }
+            }
+            
+            //Update Image
+            if self.users.count > 0 {
+                self.updateImage(uid: self.users[self.random(0..<self.users.count)].uid)
             }
             rotate = CGAffineTransform(rotationAngle: 0)
             finalTransform = rotate.scaledBy(x: 1, y: 1)
             self.cardView.transform = finalTransform
-            self.cardView.center = CGPoint(x: self.homeWrapper.bounds.width/2, y: self.homeWrapper.bounds.height/2 - 50)
+            self.cardView.center = CGPoint(x: self.homeWrapper.bounds.width/2, y: self.homeWrapper.bounds.height/2 - 30)
             self.likeImage.alpha = 0
             self.nopeImage.alpha = 0
-            
-            
         }
+    }
+    
+    func updateImage(uid:String){
+        DataBaseService.instance.User_Ref.child(uid).observeSingleEvent(of: .value) { (snapshot) in
+            if let userProfile = UserModel(snapshot: snapshot){
+                self.secondUserUid = userProfile.uid
+                self.userImage.sd_setImage(with: URL(string: userProfile.profileImage), completed: nil)
+                self.lbCarName.text = userProfile.displayName
+            }
+        }
+    }
+    
+    func random(_ range: Range<Int>)-> Int{
+        return range.lowerBound + Int(arc4random_uniform(UInt32(range.upperBound - range.lowerBound)))
     }
 
     override func didReceiveMemoryWarning() {
@@ -95,16 +208,4 @@ class HomeViewController: UIViewController {
         
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

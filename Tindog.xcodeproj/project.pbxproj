@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6743E6AF20586BF30016C0C9 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6743E6AE20586BF30016C0C9 /* UIImageExt.swift */; };
 		67982CEF204EE6A800FFA635 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67982CEE204EE6A800FFA635 /* AppDelegate.swift */; };
 		67982CF4204EE6A800FFA635 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67982CF2204EE6A800FFA635 /* Main.storyboard */; };
 		67982CF6204EE6A800FFA635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67982CF5204EE6A800FFA635 /* Assets.xcassets */; };
@@ -14,10 +15,16 @@
 		67982D04204EE6A800FFA635 /* TindogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67982D03204EE6A800FFA635 /* TindogTests.swift */; };
 		67982D0F204EE6A800FFA635 /* TindogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67982D0E204EE6A800FFA635 /* TindogUITests.swift */; };
 		67982D1E204EFC7700FFA635 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67982D1D204EFC7700FFA635 /* HomeViewController.swift */; };
+		67B2A37320571B67000A0E42 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B2A37220571B67000A0E42 /* ProfileViewController.swift */; };
+		67B2A37620572317000A0E42 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B2A37520572317000A0E42 /* UserModel.swift */; };
+		67B2A3782058514D000A0E42 /* MatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B2A3772058514D000A0E42 /* MatchModel.swift */; };
+		67B2A37A205852FE000A0E42 /* UpdateDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B2A379205852FE000A0E42 /* UpdateDBService.swift */; };
+		67B2A37C2058621C000A0E42 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B2A37B2058621B000A0E42 /* MatchViewController.swift */; };
 		67CC84292056CDA400C2C24B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC84282056CDA300C2C24B /* LoginViewController.swift */; };
 		67CC842C2056D3EE00C2C24B /* UIVIewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC842B2056D3EE00C2C24B /* UIVIewExt.swift */; };
 		67CC842E2056D7A400C2C24B /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC842D2056D7A400C2C24B /* UIViewControllerExt.swift */; };
 		67CC8430205702D400C2C24B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67CC842F205702D300C2C24B /* GoogleService-Info.plist */; };
+		67CC84332057068A00C2C24B /* DataBaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC84322057068A00C2C24B /* DataBaseServices.swift */; };
 		EB1ACECE86AA1C3BB6AABE11 /* Pods_Tindog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FF46D23A046F0D63DCA40AC /* Pods_Tindog.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		22437871ABE184D1B652BBDD /* Pods-Tindog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tindog.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tindog/Pods-Tindog.release.xcconfig"; sourceTree = "<group>"; };
+		6743E6AE20586BF30016C0C9 /* UIImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
 		67982CEB204EE6A800FFA635 /* Tindog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tindog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67982CEE204EE6A800FFA635 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67982CF3204EE6A800FFA635 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,10 +61,16 @@
 		67982D0E204EE6A800FFA635 /* TindogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TindogUITests.swift; sourceTree = "<group>"; };
 		67982D10204EE6A800FFA635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67982D1D204EFC7700FFA635 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		67B2A37220571B67000A0E42 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		67B2A37520572317000A0E42 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		67B2A3772058514D000A0E42 /* MatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchModel.swift; sourceTree = "<group>"; };
+		67B2A379205852FE000A0E42 /* UpdateDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDBService.swift; sourceTree = "<group>"; };
+		67B2A37B2058621B000A0E42 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		67CC84282056CDA300C2C24B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		67CC842B2056D3EE00C2C24B /* UIVIewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewExt.swift; sourceTree = "<group>"; };
 		67CC842D2056D7A400C2C24B /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		67CC842F205702D300C2C24B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		67CC84322057068A00C2C24B /* DataBaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseServices.swift; sourceTree = "<group>"; };
 		6FF46D23A046F0D63DCA40AC /* Pods_Tindog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tindog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A12B6D19801F750213FA6DFA /* Pods-Tindog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tindog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tindog/Pods-Tindog.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +126,8 @@
 		67982CED204EE6A800FFA635 /* Tindog */ = {
 			isa = PBXGroup;
 			children = (
+				67B2A374205722FD000A0E42 /* Models */,
+				67CC84312057065100C2C24B /* Services */,
 				67CC842A2056D3C500C2C24B /* Extensions */,
 				67982D1C204EFC4000FFA635 /* Controllers */,
 				67982CEE204EE6A800FFA635 /* AppDelegate.swift */,
@@ -147,8 +163,19 @@
 			children = (
 				67982D1D204EFC7700FFA635 /* HomeViewController.swift */,
 				67CC84282056CDA300C2C24B /* LoginViewController.swift */,
+				67B2A37220571B67000A0E42 /* ProfileViewController.swift */,
+				67B2A37B2058621B000A0E42 /* MatchViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		67B2A374205722FD000A0E42 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				67B2A37520572317000A0E42 /* UserModel.swift */,
+				67B2A3772058514D000A0E42 /* MatchModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		67CC842A2056D3C500C2C24B /* Extensions */ = {
@@ -156,8 +183,18 @@
 			children = (
 				67CC842B2056D3EE00C2C24B /* UIVIewExt.swift */,
 				67CC842D2056D7A400C2C24B /* UIViewControllerExt.swift */,
+				6743E6AE20586BF30016C0C9 /* UIImageExt.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		67CC84312057065100C2C24B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				67CC84322057068A00C2C24B /* DataBaseServices.swift */,
+				67B2A379205852FE000A0E42 /* UpdateDBService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		90C9E79FEB2EA0C89C1C51F4 /* Frameworks */ = {
@@ -321,6 +358,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -329,6 +367,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -377,10 +416,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67CC84332057068A00C2C24B /* DataBaseServices.swift in Sources */,
 				67CC842E2056D7A400C2C24B /* UIViewControllerExt.swift in Sources */,
+				67B2A37620572317000A0E42 /* UserModel.swift in Sources */,
 				67CC842C2056D3EE00C2C24B /* UIVIewExt.swift in Sources */,
+				67B2A37A205852FE000A0E42 /* UpdateDBService.swift in Sources */,
+				6743E6AF20586BF30016C0C9 /* UIImageExt.swift in Sources */,
 				67CC84292056CDA400C2C24B /* LoginViewController.swift in Sources */,
+				67B2A37320571B67000A0E42 /* ProfileViewController.swift in Sources */,
+				67B2A37C2058621C000A0E42 /* MatchViewController.swift in Sources */,
 				67982CEF204EE6A800FFA635 /* AppDelegate.swift in Sources */,
+				67B2A3782058514D000A0E42 /* MatchModel.swift in Sources */,
 				67982D1E204EFC7700FFA635 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

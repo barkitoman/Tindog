@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
-    
+    @IBOutlet weak var btnView: UIButton!
+    @IBOutlet weak var lbSubLogin: UILabel!
+    @IBOutlet weak var btnSubLogin: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
+    var registerMode = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -40,6 +45,71 @@ class LoginViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func showAlert(titulo: String, message: String){
+        let alertView = UIAlertController(title: titulo, message: message, preferredStyle: .alert)
+        alertView.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alertView, animated: true, completion: nil)
+    }
+    
+    @IBAction func actionLoginRegistrer(_ sender: Any) {
+        if self.txtEmail.text == "" || self.txtPassword.text == "" {
+            self.showAlert(titulo: "Error", message: "No puedes tener campos vacios")
+        }else{
+            if let email = self.txtEmail.text{
+                if let password = self.txtPassword.text{
+                    if registerMode {
+                        self.registrerUser(email: email, password: password)
+                    }else{
+                        self.loginUser(email: email, password: password)
+                    }
+                }
+            }
+        }
+    }
+    
+    func registrerUser(email: String, password: String){
+        Auth.auth().createUser(withEmail: email, password: password, completion: {(user, error) in
+            if error != nil {
+                self.showAlert(titulo: "Error", message: error!.localizedDescription)
+            }else{
+                if let user = user {
+                    let userData = ["provider": user.providerID,
+                                    "email": user.email!,
+                                    "profileImage": "https://i.imgur.com/oaBVoWI.jpg",
+                                    "displayName": "Crispeta",
+                                    "userIsOnMatch": false] as [String: Any]
+                    DataBaseService.instance.createFirebaseDBUser(uid: user.uid, userData: userData)
+                }
+                print("Registro")
+            }
+        })
+        
+    }
+    
+    func loginUser(email: String, password: String){
+        Auth.auth().signIn(withEmail: email, password: password, completion: {(user, error) in
+            if error != nil {
+                self.showAlert(titulo: "Error", message: error!.localizedDescription)
+            }else {
+                self.dismiss(animated: true, completion: nil)
+            }
+        })
+    }
+    
+    @IBAction func actionGoLogin(_ sender: Any) {
+        if self.registerMode{
+            self.btnView.setTitle("Login", for: .normal)
+            self.lbSubLogin.text = "¿Eres nuevo?"
+            self.btnSubLogin.setTitle("Registrate", for: .normal)
+            self.registerMode = false
+        }else{
+            self.btnView.setTitle("Crear Cuenta", for: .normal)
+            self.lbSubLogin.text = "¿Ya tienes Cuenta?"
+            self.btnSubLogin.setTitle("Login", for: .normal)
+            self.registerMode = true
+        }
+    }
+    
     @objc func keyboardWillShow(_ notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             scrollView.contentInset.bottom = keyboardSize.height + 90
@@ -60,14 +130,4 @@ class LoginViewController: UIViewController {
         return true
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
